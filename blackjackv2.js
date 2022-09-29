@@ -190,12 +190,10 @@ function validate() {
 	if (dealerCardsSum === playerCardsSum) {
 		message.textContent = msg[0];
 		message.style.color = "gray";
-		// ! add money
 	} else if (playerCardsSum === 21) {
 		message.textContent = msg[5];
 		message.style.color = "Green";
 
-		// ! add money
 		Money = Stake + Money;
 	} else if (playerCardsSum > 21) {
 		message.textContent = msg[3];
@@ -205,7 +203,6 @@ function validate() {
 		message.textContent = msg[2];
 		message.style.color = "Green";
 
-		// ! add money
 		Money = Stake + Money;
 	} else if (dealerCardsSum > playerCardsSum) {
 		message.textContent = msg[4];
@@ -213,7 +210,7 @@ function validate() {
 		message.style.color = "red";
 	} else if (playerCardsSum > dealerCardsSum) {
 		message.textContent = msg[1];
-		// ! add money
+
 		Money = Stake + Money;
 		message.style.color = "Green";
 	}
