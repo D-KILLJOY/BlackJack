@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="blackjackv2.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>BLACKJACK</h1>
+		<div class="container">
+			<div class="dealer-con">
+				<h2 class="dealer">Dealer:<span class="dealer-cards"></span></h2>
+				<h2 class="dealer-total">Total: <span class="dealer-card-total"></span></h2>
+			</div>
+			<h2 class="message"></h2>
+			<div class="player-con">
+				<h2 class="player">Player: <span class="player-cards"></span></h2>
+				<h2 class="p-total">Total: <span class="player-total"></span></h2>
+				<p class="p-money">Money Left:$<span class="money"></span></p>
+				<p class="p-stake">Stake:$<span class="stake"></span></p>
+				<label class="p-bet">Bet: $ <input type="number"  step="10" min="0" max="100" class="bet"></input></label>
+			</div>
+			<div class="btn-con">
+				<button class="btn deal">Deal</button>
+				<button class="btn stand">Stand</button>
+				<button class="btn hit">Hit</button>
+				
+			</div>
+			<div class="btn-con">
+				<button class="btn play">Play</button>
+				<button class="btn help">Help</button>
+				
+			</div>
+
+			
+		</div>
+
+		<script src="blackjackv2.js"></script>
+	</body>
+</html>
