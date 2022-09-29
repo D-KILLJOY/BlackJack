@@ -6,8 +6,10 @@ const playBtn = document.querySelector(".play");
 const GAME = document.querySelector(".container");
 let money = document.querySelector(".money");
 const bet = document.querySelector(".bet");
-const stake = document.querySelector(".stake");
+let Stake = document.querySelector(".stake");
 let message = document.querySelector(".message");
+const stakeAmt = document.querySelectorAll(".stake-btn");
+
 const msg = [
 	"Draw",
 	"You Win",
@@ -27,14 +29,33 @@ const playerCards = document.querySelector(".player-cards");
 const playerTotal = document.querySelector(".player-total");
 
 let Money = 0;
-bet.value = 0;
-
-let Stake = parseInt(bet.value);
+let stake;
 
 let playerCardsArray = [];
 let playerCardsSum = 0;
 let dealerCardsArray = [];
 let dealerCardsSum = 0;
+
+// ! STAKE
+
+for (let i = 0; i < stakeAmt.length; i++) {
+	stakeAmt[i].addEventListener("click", addStake);
+
+	function addStake() {
+		stake = parseInt(stakeAmt[i].getAttribute("stake"));
+		if (playerCanPlay === true) {
+			Stake.textContent = stake;
+		}
+	}
+}
+
+// stakeAmt.forEach((i) => {
+// 	i.addEventListener("click", () => {
+// 		stake = stakeAmt.i.getAttributte("stake");
+
+// 		console.log(stake);
+// 	});
+// });
 
 // ! PLAY
 function playGame() {
@@ -51,7 +72,8 @@ function playGame() {
 			Money = Math.floor(Math.random() * 500 + 300);
 			display();
 			clearCards();
-			bet.value = 0;
+			stake = 0;
+			Stake.textContent = stake;
 		}
 	}
 	gameStart = true;
@@ -125,12 +147,11 @@ function dealCards() {
 	if (gameStart === true) {
 		if (Money > 10) {
 			if (playerCanPlay === true) {
-				if (bet.value > 9) {
-					if (bet.value < Money) {
-						Stake = parseInt(bet.value);
+				if (stake > 9) {
+					if (stake < Money) {
+						Stake = Stake;
 						playerCanPlay = false;
 
-						stake.textContent = Stake;
 						clearCards();
 						dealPlayer();
 						dealPlayer();
@@ -194,24 +215,24 @@ function validate() {
 		message.textContent = msg[5];
 		message.style.color = "Green";
 
-		Money = Stake + Money;
+		Money = Money + stake;
 	} else if (playerCardsSum > 21) {
 		message.textContent = msg[3];
-		Money = Money - Stake;
+		Money = Money - stake;
 		message.style.color = "red";
 	} else if (dealerCardsSum > 21) {
 		message.textContent = msg[2];
 		message.style.color = "Green";
 
-		Money = Stake + Money;
+		Money = Money + stake;
 	} else if (dealerCardsSum > playerCardsSum) {
 		message.textContent = msg[4];
-		Money = Money - Stake;
+		Money = Money - stake;
 		message.style.color = "red";
 	} else if (playerCardsSum > dealerCardsSum) {
 		message.textContent = msg[1];
 
-		Money = Stake + Money;
+		Money = Money + stake;
 		message.style.color = "Green";
 	}
 	display();

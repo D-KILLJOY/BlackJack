@@ -17,13 +17,13 @@ body {
 	width: 100%;
 	font-size: 1.4rem;
 	font-family: "Courier New", Courier, monospace;
-	background-color: aquamarine;
+	background-color: rgb(246, 208, 208);
 }
 
 h1 {
 	font-size: 6rem;
 	font-weight: 900;
-	background: linear-gradient(to left, green, red, blue);
+	background: linear-gradient(to left, black, red, black);
 	background-clip: text;
 	-webkit-background-clip: text;
 	-moz-background-clip: text;
@@ -33,7 +33,7 @@ h1 {
 .container {
 	border: 2px solid black;
 	border-radius: 1.3rem;
-	width: 40rem;
+	width: 33rem;
 	min-height: 40rem;
 	padding: 1.5rem;
 }
@@ -59,7 +59,7 @@ h1 {
 }
 
 .btn-con {
-	margin: 5rem 0 3rem;
+	margin: 3rem 0 2rem;
 	display: flex;
 	justify-content: center;
 	gap: 4rem;
@@ -69,29 +69,57 @@ h1 {
 	font-weight: 900;
 }
 
-.bet {
-	width: 5rem;
-	outline: none;
-	border: none;
-	color: green;
-	font-weight: 900;
-	background-color: aquamarine;
-}
-
 .btn {
-	width: 10rem;
+	width: 7rem;
 	height: 3rem;
-	font-size: 1.6rem;
+	font-size: 1.4rem;
 	font-weight: 900;
 	border: none;
 	color: white;
 	cursor: pointer;
-	border-radius: 2rem;
+	border-radius: 1rem;
 }
 
 .btn:hover,
 .btn:active {
 	opacity: 0.7;
+}
+
+.stake-con {
+	margin: 2rem 0 0;
+	display: flex;
+	justify-content: space-between;
+}
+
+.stake-btn {
+	width: 5rem;
+	height: 3rem;
+	font-size: 1.4rem;
+	font-weight: 900;
+	border: none;
+	color: white;
+	cursor: pointer;
+	border-radius: 1rem;
+}
+
+.ten {
+	background-color: blue;
+}
+
+.twenty-five {
+	background-color: green;
+}
+
+.fifty {
+	background-color: red;
+}
+
+.seventy-five {
+	background-color: orange;
+}
+
+.hundred {
+	background-color: orangered;
 }
 
 .stand {
