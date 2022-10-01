@@ -22,6 +22,8 @@ const msg = [
 let gameStart = false;
 
 let playerCanPlay = false;
+let playerCanStand = false;
+let playerCanHit = false;
 
 const dealerCards = document.querySelector(".dealer-cards");
 const dealerTotal = document.querySelector(".dealer-card-total");
@@ -42,8 +44,8 @@ for (let i = 0; i < stakeAmt.length; i++) {
 	stakeAmt[i].addEventListener("click", addStake);
 
 	function addStake() {
-		stake = parseInt(stakeAmt[i].getAttribute("stake"));
 		if (playerCanPlay === true) {
+			stake = parseInt(stakeAmt[i].getAttribute("stake"));
 			Stake.textContent = stake;
 		}
 	}
@@ -156,6 +158,8 @@ function dealCards() {
 						dealPlayer();
 						dealPlayer();
 						dealDealer();
+						playerCanHit = true;
+						playerCanStand = true;
 						if (playerCardsSum > 21) {
 							playerCardsArray.pop();
 							redraw();
@@ -185,7 +189,7 @@ function dealCards() {
 
 // ! HIT
 function hit() {
-	if (playerCanPlay === false) {
+	if (playerCanHit === true) {
 		dealPlayer();
 		if (playerCardsSum >= 21) {
 			validate();
@@ -195,12 +199,14 @@ function hit() {
 
 // ! STAND
 function stand() {
-	if (playerCanPlay === false) {
+	if (playerCanStand === true) {
 		dealDealer();
 		if (dealerCardsSum < 16) {
 			dealDealer();
 		}
 		validate();
+		playerCanHit = false;
+		playerCanStand = false;
 	}
 }
 
