@@ -9,35 +9,60 @@
 	</head>
 	<body>
 		<h1>BLACKJACK</h1>
-		<div class="container">
-			<div class="dealer-con">
-				<h2 class="dealer">Dealer:<span class="dealer-cards"></span></h2>
-				<h2 class="dealer-total">
-					Total: <span class="dealer-card-total"></span>
-				</h2>
-			</div>
-			<h2 class="message"></h2>
-			<div class="player-con">
-				<h2 class="player">Player: <span class="player-cards"></span></h2>
-				<h2 class="p-total">Total: <span class="player-total"></span></h2>
-				<p class="p-money">Money Left:$<span class="money"></span></p>
-				<p class="p-stake">Stake:$<span class="stake"></span></p>
-				<div class="stake-con">
-					<button stake="10" class="stake-btn ten">$10</button>
-					<button stake="25" class="stake-btn twenty-five">$25</button>
-					<button stake="50" class="stake-btn fifty">$50</button>
-					<button stake="75" class="stake-btn seventy-five">$75</button>
-					<button stake="100" class="stake-btn hundred">$100</button>
+		<div class="game">
+			<div class="container">
+				<div class="dealer-con">
+					<h2 class="dealer">Dealer:<span class="dealer-cards"></span></h2>
+					<h2 class="dealer-total">
+						Total: <span class="dealer-card-total"></span>
+					</h2>
+				</div>
+				<h2 class="message"></h2>
+				<div class="player-con">
+					<h2 class="player">Player: <span class="player-cards"></span></h2>
+					<h2 class="p-total">Total: <span class="player-total"></span></h2>
+					<p class="p-money">Money Left:$<span class="money"></span></p>
+					<p class="p-stake">Stake:$<span class="stake"></span></p>
+					<div class="stake-con">
+						<button stake="10" class="stake-btn ten">$10</button>
+						<button stake="25" class="stake-btn twenty-five">$25</button>
+						<button stake="50" class="stake-btn fifty">$50</button>
+						<button stake="75" class="stake-btn seventy-five">$75</button>
+						<button stake="100" class="stake-btn hundred">$100</button>
+					</div>
+				</div>
+				<div class="btn-con">
+					<button class="btn dealbtn">Deal</button>
+					<button class="btn standbtn">Stand</button>
+					<button class="btn hitbtn">Hit</button>
+				</div>
+				<div class="btn-con">
+					<button class="btn playbtn">Play</button>
+					<button class="btn helpbtn">Help</button>
 				</div>
 			</div>
-			<div class="btn-con">
-				<button class="btn deal">Deal</button>
-				<button class="btn stand">Stand</button>
-				<button class="btn hit">Hit</button>
-			</div>
-			<div class="btn-con">
-				<button class="btn play">Play</button>
-				<button class="btn help">Help</button>
+			<div class="help hidden">
+				<h2 class="help-h2">About</h2>
+				<p class="help-p">
+					The aim of the game is to try to get a number very close to (21) and
+					above the dealers number but not above 21
+				</p>
+				<h2 class="help-h2">How To Play</h2>
+				<p class="help-p">
+					Two cards are dealt at the beginning of the game
+					<br />You can request for another card by pressing
+					<span class="highlight">HIT</span> <br />Press
+					<span class="highlight">STAND</span> to pass the turn to the dealer
+				</p>
+				<p></p>
+				<h3 class="tips">You win if:</h3>
+
+				<ul>
+					<li>You get exactly 21(blackjack)</li>
+					<li>If the sum of your card is higher than the dealers Card</li>
+					<li>If the dealer busts (gets a sum above 21)</li>
+				</ul>
+				<button class="back btn">&lt Back</button>
 			</div>
 		</div>
 

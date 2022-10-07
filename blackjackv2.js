@@ -1,14 +1,16 @@
-const dealBtn = document.querySelector(".deal");
-const standBtn = document.querySelector(".stand");
-const hitBtn = document.querySelector(".hit");
-const helpBtn = document.querySelector(".help");
-const playBtn = document.querySelector(".play");
+const dealBtn = document.querySelector(".dealbtn");
+const standBtn = document.querySelector(".standbtn");
+const hitBtn = document.querySelector(".hitbtn");
+const helpBtn = document.querySelector(".helpbtn");
+const playBtn = document.querySelector(".playbtn");
 const GAME = document.querySelector(".container");
 let money = document.querySelector(".money");
 const bet = document.querySelector(".bet");
 let Stake = document.querySelector(".stake");
 let message = document.querySelector(".message");
 const stakeAmt = document.querySelectorAll(".stake-btn");
+const backBtn = document.querySelector(".back");
+const HELP = document.querySelector(".help");
 
 const msg = [
 	"Draw",
@@ -47,6 +49,8 @@ for (let i = 0; i < stakeAmt.length; i++) {
 		if (playerCanPlay === true) {
 			stake = parseInt(stakeAmt[i].getAttribute("stake"));
 			Stake.textContent = stake;
+		} else {
+			alert("You can't stake now");
 		}
 	}
 }
@@ -80,13 +84,6 @@ function playGame() {
 	}
 	gameStart = true;
 	playerCanPlay = true;
-}
-// ! HELP
-
-function help() {
-	console.log("help");
-	//! display help over game
-	// ! INCLUDE A BUTTON THAT GOES BACK TO GAME WITHOUT REFRESHING
 }
 
 // ! DISPLAY INITIAL VALUES
@@ -247,8 +244,26 @@ function validate() {
 	}
 }
 
+// ! HELP
+
+function hidden() {
+	let displayHelp = GAME.classList.contains("hidden");
+	let displayGame = HELP.classList.contains("hidden");
+
+	if (displayHelp) {
+		GAME.classList.remove("hidden");
+		HELP.classList.add("hidden");
+	}
+
+	if (displayGame) {
+		GAME.classList.add("hidden");
+		HELP.classList.remove("hidden");
+	}
+}
+
 dealBtn.addEventListener("click", dealCards);
 hitBtn.addEventListener("click", hit);
 standBtn.addEventListener("click", stand);
 playBtn.addEventListener("click", playGame);
-helpBtn.addEventListener("click", help);
+helpBtn.addEventListener("click", hidden);
+backBtn.addEventListener("click", hidden);
